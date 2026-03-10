@@ -12,48 +12,67 @@
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      color: #fff; /* Testo in bianco per visibilità */
+      color: #fff;
     }
     .flag-btn {
-      width: 80px;
+      width: 100px; /* Leggermente più grandi per riempire meglio la griglia */
       height: auto;
-      margin: 10px 0;
       transition: transform 0.2s;
+      cursor: pointer;
     }
     .flag-btn:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
     .logo {
       max-width: 250px;
       height: auto;
     }
-
     .overlay {
-      background-color: rgba(0, 0, 0, 0.3); /* Filtro scuro per leggibilità */
-      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 30px;
       border-radius: 15px;
+      max-width: 400px; /* Limita la larghezza per tenere le bandiere vicine */
+    }
+    /* Rimuove lo spazio extra dalle colonne della griglia */
+    .row > [class^="col-"] {
+      padding: 15px;
     }
   </style>
 </head>
 <body class="d-flex flex-column align-items-center justify-content-center vh-100 text-center">
 
-  <!-- Contenuto con overlay per migliorare visibilità su sfondo -->
   <div class="overlay">
-    <!-- Logo -->
     <img src="logo.jpg" alt="Logo" class="logo mb-4">
 
-    <!-- Titolo -->
     <div class="mb-4">
       <h4>Scegli il tuo menù</h4>
-      <h5>Choose your menu</h5>
-      <h5>Wähle dein Menü</h5>
+      <h6>Choose your menu | Wähle dein Menü</h6>
+      <h5>Válaszd ki a menüt</h5>
     </div>
 
-    <!-- Bandiere -->
-    <div class="d-flex flex-column align-items-center">
-      <a href="menu-it.pdf" download><img src="https://flagcdn.com/w80/it.png" alt="Italiano" class="flag-btn"></a>
-      <a href="menu-en.pdf" download><img src="https://flagcdn.com/w80/gb.png" alt="English" class="flag-btn"></a>
-      <a href="menu-de.pdf" download><img src="https://flagcdn.com/w80/de.png" alt="Deutsch" class="flag-btn"></a>
+    <div class="container">
+      <div class="row row-cols-2 g-3">
+        <div class="col">
+          <a href="menu-it.pdf" download>
+            <img src="https://flagcdn.com/w160/it.png" alt="Italiano" class="flag-btn">
+          </a>
+        </div>
+        <div class="col">
+          <a href="menu-en.pdf" download>
+            <img src="https://flagcdn.com/w160/gb.png" alt="English" class="flag-btn">
+          </a>
+        </div>
+        <div class="col">
+          <a href="menu-de.pdf" download>
+            <img src="https://flagcdn.com/w160/de.png" alt="Deutsch" class="flag-btn">
+          </a>
+        </div>
+        <div class="col">
+          <a href="menu-hu.pdf" download>
+            <img src="https://flagcdn.com/w160/hu.png" alt="Magyar" class="flag-btn">
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
